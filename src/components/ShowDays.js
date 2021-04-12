@@ -1,5 +1,6 @@
 function ShowDays(props) {
   return (
+    <div className="daily-fcst-wrap">
     <div className="daily-forecast" onClick={() => props.dayPopul(props.id)}>
       <div className="daySection">
         <span className="day-of-week">{dayOfTheWeek(new Date(props.day))}</span>
@@ -23,6 +24,7 @@ function ShowDays(props) {
         <img alt="rain drop" className="precip-icon" src="/drop-icon.svg"></img>
         <span>{props.rainProb + "%"}</span>
       </div>
+    </div>
     </div>
   );
 

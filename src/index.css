@@ -1,5 +1,4 @@
 body {
-  margin: auto;
   font-family: -apple-system, BlinkMacSystemFont, "Solis", "Segoe UI", "Roboto",
     "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -13,15 +12,12 @@ code {
     monospace;
 }
 
-#root {
-  margin: auto;
-
-  max-width: 600px;
-}
 
 .curr-top-banner {
+  text-align: center;
   z-index: 222222;
   box-sizing: border-box;
+  height: 45px;
   position: sticky;
   top: 0; /* required */
   display: flex;
@@ -29,9 +25,9 @@ code {
   align-items: center;
   background-color: black;
   color: white;
-  width: 580px;
+  max-width: 600px;
   height: 40px;
-  margin: 0px 0px 0px 10px;
+  margin: auto;
   font-weight: 600;
 }
 
@@ -39,8 +35,8 @@ code {
   display: flex;
   position: relative;
   justify-content: flex-start;
-  width: 600px;
-  margin-left: 10px;
+  max-width: 600px;
+  margin: auto;
 }
 
 .toggle-screen {
@@ -124,9 +120,12 @@ code {
 
 .day-detail,
 .curr-detail,
-.daily-forecast,
+.daily-fcst-wrap,
 .hourly-forecast {
+  box-sizing: border-box;
   position: relative;
+  margin: auto;
+  max-width: 600px;
 }
 
 .day-det-weather,
