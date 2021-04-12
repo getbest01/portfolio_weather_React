@@ -16,26 +16,22 @@ code {
 #root {
   margin: auto;
 
-  width: 650px;
-   
+  max-width: 600px;
 }
-
 
 .curr-top-banner {
   z-index: 222222;
   box-sizing: border-box;
   position: sticky;
-
   top: 0; /* required */
-
   display: flex;
   justify-content: flex-start;
   align-items: center;
   background-color: black;
   color: white;
-  width: 600px;
+  width: 580px;
   height: 40px;
-  margin: 0px 10px 0px 10px;
+  margin: 0px 0px 0px 10px;
   font-weight: 600;
 }
 
@@ -49,7 +45,7 @@ code {
 
 .toggle-screen {
   border: none;
-  background-color: #ebebeb;;
+  background-color: #ebebeb;
   width: auto;
   font-size: 0.9rem;
   font-weight: 550;
@@ -133,7 +129,6 @@ code {
   position: relative;
 }
 
-
 .day-det-weather,
 .day-det-astro,
 .curr-det-weather,
@@ -196,7 +191,7 @@ code {
   justify-content: space-between;
   padding: 10px 0px 10px 0px;
   margin: 0px;
-  border-top: solid 1px rgba(0,0,0,.15);
+  border-top: solid 1px rgba(0, 0, 0, 0.15);
   font-size: 0.9rem;
 }
 
@@ -220,7 +215,7 @@ code {
 }
 
 .day-det-astro-left {
-  border-right: solid 1px rgba(0,0,0,.15);
+  border-right: solid 1px rgba(0, 0, 0, 0.15);
 }
 
 .temp-avg {
@@ -269,8 +264,6 @@ code {
   font-size: 1.2rem;
 }
 
-
-
 .currtop-loc,
 .currtop-temp,
 .currtop-weather-icon {
@@ -291,24 +284,22 @@ code {
   border: none;
 }
 
-
-
 .loader {
   margin: auto;
- align-items: center;
- border: 16px solid #f3f3f3; /* Light grey */
- border-top: 16px solid #3498db; /* Blue */
- border-radius: 50%;
- width: 120px;
- height: 120px;
- animation: spin 2s linear infinite;
+  align-items: center;
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
 }
 
 @keyframes spin {
- 0% {
-   transform: rotate(0deg);
- }
- 100% {
-   transform: rotate(360deg);
- }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
