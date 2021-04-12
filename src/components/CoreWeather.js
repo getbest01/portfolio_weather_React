@@ -130,7 +130,7 @@ function CoreWeather(props) {
       <nav className="nav-class">
         <button className="toggle-screen" onClick={() => setwhatToShow("curr")}>NOW</button>
         <button className="toggle-screen" onClick={() => setwhatToShow("day")}>DAY</button>
-        <button className="toggle-screen" onClick={() => setwhatToShow("hour")}>HOURLY</button>
+        <button className="toggle-screen" onClick={() => setwhatToShow("hour")}>Hourly</button>
       </nav>
       <div>{renderList}</div>
     </div>

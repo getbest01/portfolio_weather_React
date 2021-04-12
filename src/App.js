@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "./App.css";
 import CoreWeather from "./components/CoreWeather";
 import ShowTopCurr from "./components/ShowTopCurr";
 
@@ -13,7 +12,7 @@ function App() {
   useEffect(() => {
     getGeoLoc();
     setloading(<div className="loader"> {loading}</div>);
-  },[]);
+  }, []);
 
   //fetch weather data and render current weather
   useEffect(() => {
@@ -57,8 +56,8 @@ function App() {
   return (
     <>
       {loading}
-      <div>{showCurrTop}</div>
-      <div>{weatherRender}</div>
+      {showCurrTop}
+      {weatherRender}
     </>
   );
 }
