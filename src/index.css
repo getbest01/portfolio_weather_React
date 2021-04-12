@@ -1,13 +1,278 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  margin: auto;
+  font-family: -apple-system, BlinkMacSystemFont, "Solis", "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #ebebeb;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+#root {
+  margin: auto;
+  display: block;
+  position:relative;
+  max-width: 650px;
+   
+}
+
+.daily-forecast,
+.hourly-head {
+  display: flex;
+  background-color: white;
+  margin: 10px;
+  justify-content: space-around;
+  align-items: baseline;
+  text-decoration: none;
+  height: 70px;
+  max-width: 600px;
+  font-size: 0.8rem;
+}
+
+.daySection {
+  display: flex;
+  flex-flow: column;
+  text-align: center;
+  margin: auto;
+}
+
+.hour-time,
+.day-of-week {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.hour-day,
+.day-day {
+  font-size: 0.8rem;
+}
+
+.weather-icon {
+  margin: auto;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.temp > .high,
+.avg {
+  font-size: 2em;
+  font-weight: 400;
+}
+
+.temp,
+.weather-comments,
+.precip,
+.precip-icon,
+.temp-avg,
+.temp-feel,
+.day-day {
+  margin: auto;
+}
+
+.precip-icon {
+  padding-right: 5px;
+}
+
+.weather-comments {
+  text-align: left;
+  max-width: 150px;
+}
+
+/* day-detail*/
+
+.day-detail,
+.curr-detail {
+  display: flex;
+  flex-flow: column;
+}
+
+.day-det-weather,
+.day-det-astro,
+.curr-det-weather,
+.hourly-rest {
+  display: flex;
+  flex-flow: column;
+  background-color: white;
+  margin: 10px;
+
+  height: 320px;
+  max-width: 600px;
+}
+
+.curr-det-weather {
+  height: auto;
+}
+
+.day-det-astro {
+  height: 190px;
+}
+
+.day-det-astro > h4,
+.curr-top-head > h4 {
+  margin: 10px 0px 10px 10px;
+  font-weight: 450;
+}
+
+.curr-top-head > h4 {
+  margin-left: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.day-detail-head {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px;
+}
+
+.day-detail-weather-icon {
+  width: 80px;
+  height: 80px;
+}
+
+.day-det-weather-comments {
+  text-align: left;
+  margin: 10px;
+}
+
+.day-detail-rest,
+.day-det-astro-panels,
+.hourly-res {
+  display: flex;
+  justify-content: space-between;
+}
+
+.panel-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0px 10px 0px;
+  margin: 0px;
+  border-top: solid 1px rgba(0,0,0,.15);
+  font-size: 0.9rem;
+}
+
+.day-detail-left,
+.day-detail-right,
+.day-det-astro-left,
+.day-det-astro-right {
+  width: 50%;
+  padding: 10px 10px 0px 10px;
+}
+
+.curr-detail-rest {
+  padding: 10px 10px 0px 10px;
+}
+
+.hourly-rest {
+  box-sizing: border-box;
+  margin: 10px;
+  padding: 10px;
+  height: 440px;
+}
+
+.day-det-astro-left {
+  border-right: solid 1px rgba(0,0,0,.15);
+}
+
+.temp-avg {
+  font-size: 1.6rem;
+}
+
+.day-det-astro-moon,
+.day-det-astro-sun {
+  width: 35px;
+  height: 35px;
+}
+
+.curr-top-head {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+  align-items: center;
+}
+
+.curr-top-weather {
+  display: flex;
+  justify-content: center;
+}
+
+.curr-temp-grp {
+  display: flex;
+  flex-flow: column;
+}
+
+.curr-temp {
+  font-size: 3.5rem;
+  font-weight: 600;
+}
+
+.curr-temp-feel {
+  font-size: 0.8rem;
+}
+
+.curr-detail-weather-icon {
+  width: 110px;
+  height: 110px;
+}
+
+.curr-weather-comments {
+  margin: auto;
+  font-size: 1.2rem;
+}
+
+.curr-top-banner {
+  box-sizing: border-box;
+  position: sticky;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: black;
+  color: white;
+  max-width: 600px;
+  height: 40px;
+  margin: 0px 10px 0px 10px;
+  font-weight: 600;
+}
+
+.currtop-loc,
+.currtop-temp,
+.currtop-weather-icon {
+  margin: 10px;
+  font-size: 0.8rem;
+}
+
+.currtop-weather-icon {
+  width: 35px;
+  height: 35px;
+}
+
+.accordion__button {
+  outline: none;
+}
+
+#hrly-top-panel {
+  border: none;
+}
+
+.nav-class {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  max-width: 600px;
+  margin-left: 10px;
+}
+
+.toggle-screen {
+  border: none;
+  background-color: #ebebeb;;
+  width: auto;
+  font-size: 0.9rem;
+  font-weight: 550;
+  margin: 10px 10px 0px 10px;
 }
