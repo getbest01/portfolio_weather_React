@@ -13,13 +13,35 @@ code {
 }
 
 
+/*loading animation*/
+.loader {
+  margin: auto;
+  align-items: center;
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*top banner - current weather*/
 .curr-top-banner {
   text-align: center;
   z-index: 222222;
   box-sizing: border-box;
   height: 45px;
   position: sticky;
-  top: 0; /* required */
+  top: 0;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -31,7 +53,9 @@ code {
   font-weight: 600;
 }
 
+/*navigation button group*/
 .nav-class {
+  box-sizing: border-box;
   display: flex;
   position: relative;
   justify-content: flex-start;
@@ -39,6 +63,7 @@ code {
   margin: auto;
 }
 
+/*each navigation button*/
 .toggle-screen {
   border: none;
   background-color: #ebebeb;
@@ -47,6 +72,7 @@ code {
   font-weight: 550;
   margin: 10px 10px 0px 10px;
 }
+
 
 .daily-forecast,
 .hourly-head {
@@ -136,10 +162,11 @@ code {
   flex-flow: column;
   background-color: white;
   margin: 10px;
-
   height: 320px;
   max-width: 600px;
 }
+
+
 
 .curr-det-weather {
   height: auto;
@@ -180,7 +207,7 @@ code {
 
 .day-detail-rest,
 .day-det-astro-panels,
-.hourly-res {
+.hourly-rest {
   display: flex;
   justify-content: space-between;
 }
@@ -208,7 +235,6 @@ code {
 
 .hourly-rest {
   box-sizing: border-box;
-  margin: 10px;
   padding: 10px;
   height: 440px;
 }
@@ -283,22 +309,3 @@ code {
   border: none;
 }
 
-.loader {
-  margin: auto;
-  align-items: center;
-  border: 16px solid #f3f3f3; /* Light grey */
-  border-top: 16px solid #3498db; /* Blue */
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
-  animation: spin 2s linear infinite;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}

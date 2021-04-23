@@ -65,12 +65,16 @@ function CoreWeather(props) {
         );
         break;
       case "hour":
-        for (let i = parseInt(weatherData.current.last_updated.slice(-5,-3)); i < 24; i++) {
+        for (
+          let i = parseInt(weatherData.current.last_updated.slice(-5, -3));
+          i < 24;
+          i++
+        ) {
           hourList.push(
             <ShowHours
               id={nanoid()}
               key={nanoid()}
-              hour={`${i > 12 ? i - 12 : i} ${i <= 12 ? "AM" : "PM"}`}
+              hour={`${i > 12 ? i - 12 : i} ${i < 12 ? "AM" : "PM"}`}
               day={forecastData[0].date}
               weatherIcon={forecastData[0].hour[i].condition.icon}
               weatherCond={forecastData[0].hour[i].condition.text}
@@ -128,9 +132,15 @@ function CoreWeather(props) {
   return (
     <>
       <nav className="nav-class">
-        <button className="toggle-screen" onClick={() => setwhatToShow("curr")}>NOW</button>
-        <button className="toggle-screen" onClick={() => setwhatToShow("day")}>DAY</button>
-        <button className="toggle-screen" onClick={() => setwhatToShow("hour")}>Hourly</button>
+        <button className="toggle-screen" onClick={() => setwhatToShow("curr")}>
+          NOW
+        </button>
+        <button className="toggle-screen" onClick={() => setwhatToShow("day")}>
+          DAY
+        </button>
+        <button className="toggle-screen" onClick={() => setwhatToShow("hour")}>
+          Hourly
+        </button>
       </nav>
       {renderList}
     </>

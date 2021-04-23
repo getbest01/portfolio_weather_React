@@ -11,7 +11,7 @@ function App() {
   //get geolocation once when first rendered
   useEffect(() => {
     getGeoLoc();
-    setloading(<div className="loader"> {loading}</div>);
+    setloading(<div className="loader"> loading...</div>);
   }, []);
 
   //fetch weather data and render current weather
