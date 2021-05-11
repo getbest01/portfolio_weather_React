@@ -17,7 +17,6 @@ function App() {
   //fetch weather data and render current weather
   useEffect(() => {
     if (geoLoc !== "") {
-      console.log("initial-fetch");
       fetch(`https://jason-11.herokuapp.com/weathergeo?geo=${geoLoc}`, {
         headers: {
           Accept: "application/text",
