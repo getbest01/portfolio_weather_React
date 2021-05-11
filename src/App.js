@@ -16,34 +16,37 @@ function App() {
 
   //fetch weather data and render current weather
   useEffect(() => {
-    fetch(`https://jason-11.herokuapp.com/weathergeo?geo=${geoLoc}`, {
-      headers: {
-        Accept: "application/text",
-        "Content-Type": "application/text",
-        "Access-Control-Allow-Origin": "",
-      },
-      method: "get",
-      mode: "cors",
-    })
-      .then((response) => {
-        return response.json();
+    if (geoLoc !== "") {
+      console.log("initial-fetch");
+      fetch(`https://jason-11.herokuapp.com/weathergeo?geo=${geoLoc}`, {
+        headers: {
+          Accept: "application/text",
+          "Content-Type": "application/text",
+          "Access-Control-Allow-Origin": "",
+        },
+        method: "get",
+        mode: "cors",
       })
-      .then((data) => {
-        setloading("");
-        console.log(data)
-        setshowCurrTop(
-          <ShowTopCurr
-            loc={data.location.name + ", " + data.location.region}
-            temp={data.current.temp_c}
-            weatherIcon={data.current.condition.icon}
-          />
-        );
-        setweatherRender(<CoreWeather values={data} show="curr" />);
-      })
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          setloading("");
+          console.log(data);
+          setshowCurrTop(
+            <ShowTopCurr
+              loc={data.location.name + ", " + data.location.region}
+              temp={data.current.temp_c}
+              weatherIcon={data.current.condition.icon}
+            />
+          );
+          setweatherRender(<CoreWeather values={data} show="curr" />);
+        })
 
-      .catch((err) => {
-        console.error(err);
-      });
+        .catch((err) => {
+          console.error(err);
+        });
+    }
   }, [geoLoc]);
 
   //geo location function
