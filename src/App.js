@@ -31,7 +31,6 @@ function App() {
         })
         .then((data) => {
           setloading("");
-          console.log(data);
           setshowCurrTop(
             <ShowTopCurr
               loc={data.location.name + ", " + data.location.region}
