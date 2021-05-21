@@ -9,9 +9,9 @@ function CoreWeather(props) {
   const forecastData = props.values.forecast.forecastday;
   const weatherData = props.values;
 
-  const [whatToShow, setwhatToShow] = useState(props.show);
-  const [dayDetIndex, setdayDetIndex] = useState();
-  const [renderList, setrenderList] = useState("");
+  const [whatToShow, setWhatToShow] = useState(props.show);
+  const [dayDetIndex, setDayDetIndex] = useState();
+  const [renderList, setRenderList] = useState("");
   let dayList = [];
   let hourList = [];
 
@@ -33,10 +33,10 @@ function CoreWeather(props) {
             />
           );
         }
-        setrenderList(dayList);
+        setRenderList(dayList);
         break;
       case "curr":
-        setrenderList(
+        setRenderList(
           <ShowCurr
             id={nanoid()}
             key={nanoid()}
@@ -95,10 +95,10 @@ function CoreWeather(props) {
             />
           );
         }
-        setrenderList(hourList);
+        setRenderList(hourList);
         break;
       case "dayDet":
-        setrenderList(
+        setRenderList(
           <DayDetail
             id={dayDetIndex}
             day={forecastData[dayDetIndex].date}
@@ -125,20 +125,20 @@ function CoreWeather(props) {
   }, [whatToShow]);
 
   function dayDetailPopulate(i) {
-    setwhatToShow("dayDet");
-    setdayDetIndex(i);
+    setWhatToShow("dayDet");
+    setDayDetIndex(i);
   }
 
   return (
     <>
       <nav className="nav-class">
-        <button className="toggle-screen" onClick={() => setwhatToShow("curr")}>
+        <button className="toggle-screen" onClick={() => setWhatToShow("curr")}>
           NOW
         </button>
-        <button className="toggle-screen" onClick={() => setwhatToShow("day")}>
+        <button className="toggle-screen" onClick={() => setWhatToShow("day")}>
           DAY
         </button>
-        <button className="toggle-screen" onClick={() => setwhatToShow("hour")}>
+        <button className="toggle-screen" onClick={() => setWhatToShow("hour")}>
           Hourly
         </button>
       </nav>

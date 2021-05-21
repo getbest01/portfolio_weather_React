@@ -3,15 +3,15 @@ import CoreWeather from "./components/CoreWeather";
 import ShowTopCurr from "./components/ShowTopCurr";
 
 function App() {
-  const [showCurrTop, setshowCurrTop] = useState("");
-  const [geoLoc, setgeoLoc] = useState("");
+  const [showCurrTop, setShowCurrTop] = useState("");
+  const [geoLoc, setGeoLoc] = useState("");
   const [weatherRender, setweatherRender] = useState("");
-  const [loading, setloading] = useState("");
+  const [loading, setLoading] = useState("");
 
   //get geolocation once when first rendered
   useEffect(() => {
     getGeoLoc();
-    setloading(<div className="loader"> loading...</div>);
+    setLoading(<div className="loader"> loading...</div>);
   }, []);
 
   //fetch weather data and render current weather
@@ -30,8 +30,8 @@ function App() {
           return response.json();
         })
         .then((data) => {
-          setloading("");
-          setshowCurrTop(
+          setLoading("");
+          setShowCurrTop(
             <ShowTopCurr
               loc={data.location.name + ", " + data.location.region}
               temp={data.current.temp_c}
@@ -52,7 +52,7 @@ function App() {
     navigator.geolocation.getCurrentPosition(getPos);
   }
   function getPos(position) {
-    setgeoLoc(`${position.coords.latitude},${position.coords.longitude}`);
+    setGeoLoc(`${position.coords.latitude},${position.coords.longitude}`);
   }
 
   return (
